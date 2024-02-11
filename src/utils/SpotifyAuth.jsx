@@ -26,7 +26,7 @@ const codeVerifier  = generateRandomString(64);
 // let code = urlParams.get('code');
 
 const clientId = process.env.REACT_APP_SPOTIFY_ID;
-const redirectUri = 'http://localhost:3000/callback';
+const redirectUri = process.env.REACT_APP_REDIRECT_URI;
     
 export const getLogin = async () => {
     const hashed = await sha256(codeVerifier);
