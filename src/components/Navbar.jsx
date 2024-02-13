@@ -46,7 +46,7 @@ const Navbar = () => {
                                 </div>
 
                                 <div className={`absolute ${isOpen ? '': 'hidden'} w-full mt-3 text-black bg-white rounded-md p-3`}>
-                                    <Link to={'/'} className="block text-black w-full text-center text-lg text-medium px-3 py-2 font-medium">Profile</Link>
+                                    <Link to={'/profile'} className="block text-black w-full text-center text-lg text-medium px-3 py-2 font-medium">Profile</Link>
                                     <hr />
                                     <button onClick={() => logout()} className="text-red-500 w-full text-lg text-medium px-3 py-2 font-medium">Logout</button>
                                 </div>

@@ -32,7 +32,7 @@ const Callback = () => {
     }, [])
 
     return ( 
-        <p>Reditecting</p>
+        <p>Redirect</p>
      );
 }
  

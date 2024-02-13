@@ -7,39 +7,6 @@ import Songs from "../containers/Content";
 const Home = () => {
 
     const { user, setUser } = useContext(UserContext);
-    
-    useEffect(() => {
-        const today = new Date();
-        if (localStorage.getItem('access_token') != null && localStorage.getItem('access_token') !== 'undefined') {
-            if (today > new Date(localStorage.getItem('expired_at'))) {
-                if (localStorage.getItem('refresh_token') != null && localStorage.getItem('refresh_token') !== 'undefined') {
-                    getRefreshToken()
-                        .then(() => {
-                            getCurrentUser(localStorage.getItem('access_token'))
-                                .then(response => setUser(response.data))
-                        })
-                } else {
-                    localStorage.clear()
-                    setUser(null);
-                }
-            } else {
-                getCurrentUser(localStorage.getItem('access_token'))
-                    .then(response => setUser(response.data))
-            }
-        } else {
-            if (localStorage.getItem('refresh_token') != null && localStorage.getItem('refresh_token') !== 'undefined') {
-                getRefreshToken()
-                    .then(() => {
-                        getCurrentUser(localStorage.getItem('access_token'))
-                            .then(response => setUser(response.data))
-                    })
-            } else {
-                localStorage.clear()
-                setUser(null);
-            }
-   
-        }
-    }, [])
 
     return(
         <div className="py-32 lg:py-12">
